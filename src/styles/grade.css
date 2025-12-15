@@ -1,0 +1,64 @@
+.watching-info{
+    padding-left: 16.5rem;
+    width: 58%;
+    flex-direction: column;
+    display: flex;
+
+}
+.grade{
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 250px;
+}
+.grade-title {
+    font-weight: 600;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: 'Pretendard-Medium';
+
+}
+.grade-wrapper{
+    height: 250px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    font-family: 'Pretendard-regular';
+    
+    
+}
+.timeline {
+    box-sizing: border-box;
+    width: 100%;
+    height: 48%;
+    margin-top: 50px;
+}
+.timeline-title {
+    font-weight: 600;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: 'Pretendard-Medium';
+
+}
+
+.timeline-wrapper {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    font-family: 'Pretendard-regular';
+
+}
+@media (max-width: 1440px) {
+    .watching-info {
+            padding-left: 40px;
+            box-sizing: border-box;
+            width: 58%;
+        }
+}

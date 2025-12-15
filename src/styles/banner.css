@@ -1,0 +1,61 @@
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.banner-section-wrapper {
+    aspect-ratio: 13/1;
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
+    box-sizing: border-box;
+    margin-top: 15px;
+    border-radius: 3px;
+}
+
+.banner-swiper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    --swiper-theme-color: #000;
+    border-radius: 3px;
+}
+
+.swiper-slide {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1440px) {
+    .banner-section-wrapper {
+        padding:0 40px;
+    }
+}
+
+/* -------------------------------------- */
+/* 모바일 스타일 (화면 너비 767px 이하) */
+/* -------------------------------------- */
+@media (max-width: 767px) {
+    .banner-swiper {
+        /* aspect-ratio: 16 / 5; /* 모바일에서 더 납작한 비율 (선택 사항) */
+        padding-left: 15px;
+        /* 모바일에서 좌우 패딩 더 줄임 */
+        padding-right: 15px;
+        margin-top: 0px;
+        /* 여백 제거 또는 더 줄임 */
+    }
+}

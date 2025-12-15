@@ -1,0 +1,165 @@
+.movie-detail-container {
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
+    box-sizing: border-box;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.detail-container{
+    margin-left: 15px;
+}
+.detail-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+.detail-poster {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.detail-info {
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    overflow: hidden;
+}
+.detail-title {
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: 'Pretendard-Medium';
+    margin-bottom: 0;
+}
+.detail-release-date,
+.detail-genres,
+.detail-runtime,
+.detail-vote-average {
+    font-family: 'Pretendard-Regular';
+
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+.detail-overview {
+    width: 100%;
+    text-align: left;
+    margin-top: 85px;
+    margin-bottom: 20px;
+
+    
+}
+.detail-overview-title {
+    font-size: 26px;
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+    margin-bottom: 10px;
+}
+.detail-overview-content {
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    line-height: 1.5;
+    color: #555;
+
+}
+.cast-content{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 60px;
+}
+.cast-title{
+    font-size: 1.5rem;
+    font-family: 'Pretendard-Medium';
+}
+.credits-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+}
+.actor-item{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    
+    gap:15px;
+    
+}
+.actor-profile-img{
+    height: 76px;
+    object-fit: cover;
+    border-radius: 4px;
+
+}
+.no-profile-placeholder {
+    height: 76px;
+    width: 50px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #bbb;
+    flex-shrink: 0;
+}
+.actor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 0;
+    
+
+}
+.actor{
+    flex-direction: column;
+    flex:1;
+    height: 100%;
+    justify-content: center;
+    border-bottom: 1px solid #ebeaea;
+}
+.actor-name {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 1.2;
+    font-family: "Pretendard-Medium";
+
+}
+.actor-character {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Pretendard-Medium";
+}
+
+@media (max-width: 1440px) {
+    .movie-detail-container {
+        padding-left: 40px;
+        padding-right: 40px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 767px) {
+    .movie-detail-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+}

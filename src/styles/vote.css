@@ -1,0 +1,346 @@
+/* -------------------------------------- */
+/* 데스크톱 스타일 (기본값: 1025px 이상) */
+/* -------------------------------------- */
+.vote-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+.vote-section-title {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-family: 'Pretendard-Medium';
+}
+.more-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #888888;
+    font-size: 14px;
+    font-family: 'Pretendard-regular';
+    text-decoration: none;
+    cursor: pointer;
+    text-align: right;
+
+}
+
+.more-button img {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+.vote-section-container {
+    height: 450px;
+    width: 100%;
+    overflow: hidden;
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
+    box-sizing: border-box;
+    display: flex;
+    float: left;
+    background-color: #ffffff;
+    min-height: 350px;
+    /* 최소 높이 설정 (컨텐츠 부족 시) */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+}
+
+.vote-section-section {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    font-family: 'Pretendard-regular';
+}
+
+
+
+.vote-card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.vote-question {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.vote-options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    position: relative;
+    margin-left: 0.5rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    /* 옵션 텍스트 왼쪽 정렬 */
+}
+
+.vote-option-item {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #6b7280;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    /* 텍스트 정렬 */
+}
+
+.vote-option-item input[type="radio"] {
+    margin-right: 10px;
+    /* 라디오 버튼과 텍스트 간격 */
+    transform: scale(1.2);
+    /* 라디오 버튼 크기 키움 */
+    cursor: pointer;
+}
+
+.vote-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 5rem;
+    align-self: flex-end;
+}
+
+.vote-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* 투표 결과 스타일 */
+.vote-results {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vote-result-item {
+    display: flex;
+    flex-wrap: wrap;
+    /* 요소들이 한 줄에 안될 경우 다음 줄로 */
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.vote-result-item .option-text {
+    flex-basis: 120px;
+    /* 옵션 텍스트의 기본 너비 */
+    text-align: left;
+    flex-shrink: 0;
+    /* 줄어들지 않도록 */
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+    /* 남은 공간을 채움 */
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+    /* 프로그래스 바가 컨테이너를 넘지 않도록 */
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* 퍼센트 텍스트 오른쪽 정렬 */
+    padding-right: 5px;
+    /* 퍼센트 텍스트와 바 끝 간격 */
+}
+
+.percentage-text {
+    position: absolute;
+    right: 5px;
+    /* 바의 끝에 위치 */
+    color: #333;
+    /* 텍스트 색상 */
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+    /* 흰색 그림자로 가독성 높임 */
+}
+
+.vote-count {
+    font-size: 0.9rem;
+    color: #777;
+    flex-shrink: 0;
+}
+
+.vote-button.reset-button {
+    background-color: #6c757d;
+    /* 리셋 버튼 색상 */
+    margin-top: 20px;
+}
+
+.vote-button.reset-button:hover {
+    background-color: #5a6268;
+}
+
+
+@media (max-width: 1440px) {
+    .vote-section-container {
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            padding-left: 40px;
+            padding-right: 40px;
+            box-sizing: border-box;
+            display: flex;
+            float: left;
+            background-color: #ffffff;
+            min-height: 350px;
+            /* 최소 높이 설정 (컨텐츠 부족 시) */
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+    .vote-section-section {
+        width: 100%;
+        box-sizing: border-box;
+        
+    }
+
+
+
+    .vote-card {
+        padding: 20px;
+    }
+
+    .vote-question {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .vote-option-item,
+    .vote-result-item,
+    .vote-button {
+        font-size: 0.95rem;
+    }
+
+    .vote-option-item input[type="radio"] {
+        transform: scale(1.1);
+    }
+
+    .vote-result-item .option-text {
+        flex-basis: 100px;
+        /* 옵션 텍스트 기본 너비 줄임 */
+    }
+
+    .progress-bar-container {
+        height: 18px;
+    }
+
+    .percentage-text,
+    .vote-count {
+        font-size: 0.85rem;
+    }
+}
+
+/* -------------------------------------- */
+/* 모바일 스타일 (화면 너비 767px 이하) */
+/* -------------------------------------- */
+@media (max-width: 767px) {
+    .vote-section-section {
+        padding: 20px 20px;
+        /* 모바일에서 패딩 더 줄임 */
+        margin-top: 20px;
+        margin-left: 15px;
+        /* 좌우 여백 */
+        margin-right: 15px;
+    }
+
+    .vote-section-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .vote-card {
+        padding: 15px;
+    }
+
+    .vote-question {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .vote-options {
+        gap: 10px;
+    }
+
+    .vote-option-item,
+    .vote-result-item,
+    .vote-button {
+        font-size: 0.9rem;
+    }
+
+    .vote-option-item input[type="radio"] {
+        transform: scale(1.0);
+    }
+
+    .vote-result-item {
+        flex-direction: column;
+        /* 모바일에서 결과 항목을 세로로 정렬 */
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .vote-result-item .option-text {
+        flex-basis: auto;
+        /* 너비 자동 조절 */
+        width: 100%;
+        /* 한 줄 전체 사용 */
+    }
+
+    .progress-bar-container {
+        width: 100%;
+        /* 프로그래스 바 너비를 100%로 설정 */
+        height: 15px;
+    }
+
+    .percentage-text,
+    .vote-count {
+        font-size: 0.8rem;
+    }
+
+    .vote-button {
+        padding: 10px 20px;
+    }
+}
