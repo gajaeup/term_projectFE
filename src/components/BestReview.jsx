@@ -1,54 +1,41 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import client from '../api/client';
 import '../styles/bestReview.css';
 
 function BestReview() {
-  const bestReviews = [
-    {
-      id: 'best-1',
-      movieImg: 'https://placehold.co/40x40/800080/FFFFFF?text=B1',
-      username: '닉네임1',
-      movieName: '영화 이름',
-      reviewText: '리뷰',
-      likes: 47,
-      rating: 4,
-    },
-    {
-      id: 'best-2',
-      movieImg: 'https://placehold.co/40x40/008080/FFFFFF?text=B2',
-      username: '닉네임2',
-      movieName: '영화 이름',
-      reviewText: '이 작품을 보기 전으로 돌아가고 싶어요.',
-      likes: 4,
-      rating: 1.5
-    },
-    {
-      id: 'best-3',
-      movieImg: 'https://placehold.co/40x40/008080/FFFFFF?text=B3',
-      username: '닉네임3',
-      movieName: '영화 이름',
-      reviewText: '리뷰',
-      likes: 16,
-      rating: 2.5
-    },
-    {
-      id: 'best-4',
-      movieImg: 'https://placehold.co/40x40/008080/FFFFFF?text=B4',
-      username: '닉네임4',
-      movieName: '영화 이름',
-      reviewText: '리뷰',
-      likes: 27,  
-      rating: 3
-    },
-    {
-      id: 'best-4',
-      movieImg: 'https://placehold.co/40x40/008080/FFFFFF?text=B5',
-      username: '닉네임5',
-      movieName: '영화 이름',
-      reviewText: '작품 안본 눈 삽니다',
-      likes: 10,  
-      rating: 5
-    },
-  ];
+  const [bestReviews, setBestReviews] = useState([]);
+  const navigate = useNavigate();
+
+  // 2. 컴포넌트가 처음 렌더링될 때 API 호출
+  useEffect(() => {
+    const fetchBestReviews = async () => {
+      try {
+
+        const response = await client.get('/reviews/popular');
+        const rawData = response.data.data || response.data;
+
+        const mappedData = rawData.map((item) => ({
+          id: item.reviewId || item.id,            // 백엔드가 reviewId로 주면 수정
+          movieImg: item.imageUrl || 'https://placehold.co/40x40/800080/FFFFFF?text=NoImg', // 이미지 URL
+          username: item.nickname || item.username,
+          movieName: item.title || item.movieName, 
+          reviewText: item.comment,
+          likes: item.like_count,    
+          rating: item.rating
+        }));
+
+        setBestReviews(mappedData);
+
+      } catch (error) {
+        console.error("베스트 리뷰 불러오기 실패:", error);
+        // 에러 시 빈 배열 유지
+      }
+    };
+    fetchBestReviews();
+  }, []);
+
 
   const renderStars = (rating) => {
     const stars = [];
@@ -111,9 +98,11 @@ function BestReview() {
   };
 
   return (
+
     <>  
-      <div className="section-title">지금 뜨는 BEST 리뷰</div>
-        <div className="best-review-list-wrapper">
+      <div className="section-title" >지금 뜨는 BEST 리뷰</div>
+        <div className="best-review-list-wrapper"onClick={() => navigate('/reviewlist', { state: { sort: 'popular' } })} // 이동 시 상태 전달
+        style={{ cursor: 'pointer' }}>
         <div className="best-review-section">
         <div className="review-grid">
           <div className="best-review-list-animated">

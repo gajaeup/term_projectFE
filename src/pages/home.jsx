@@ -15,7 +15,7 @@ function Home() {
       <Banner />
       <BestReview />
       <Profile />
-      <Vote /> 
+      {/*<Vote /> */}
       <Outlet /> 
     </div>
   );

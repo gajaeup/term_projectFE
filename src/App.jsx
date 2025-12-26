@@ -18,7 +18,7 @@ import JoinModal from "./components/joinModal";
 import Login from './components/login';
 import { useState } from "react";
 import { AuthProvider } from './components/authContext';
-
+import ReviewList from "./pages/reviewlist";
 function App() {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false); // 모달 열림/닫힘 상태
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -48,6 +48,7 @@ function App() {
                 <Route path="/personal" element={<Personal/>} />                 
                 <Route path="/detail/:type/:id" element={<MovieDetail />} />
                 <Route path="/detail/:type/:id" element={<MovieDetail />} /> 
+                <Route path="/reviewlist" element={<ReviewList />} />
               </Routes>
               <JoinModal isOpen={isLoginModalOpen} onClose={handleCloseLoginModal}>
                         <Login onCloseModal={handleCloseLoginModal} /> 

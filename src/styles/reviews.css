@@ -1,0 +1,57 @@
+.section-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    margin-bottom: 2rem;
+    padding : 0
+    
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-family: 'Pretendard-Medium';
+    margin-left: 10px;
+}
+.like-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.like-button:hover {
+    background-color: #fff1f0;
+    border-color: #ff4d4f;
+    color: #ff4d4f;
+}
+
+.reviews-page{
+    padding-top: 100px;
+    padding-bottom: 10px;
+    padding-left: 16.5rem;
+    padding-right: 16.5rem;
+    box-sizing: border-box;
+    justify-content: left;
+    align-items: left;
+    
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.review-card {
+    border-bottom: 0.5px solid #cacaca;
+}

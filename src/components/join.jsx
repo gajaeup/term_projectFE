@@ -2,17 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import '../styles/join.css';
 import logo from '../images/logo4.png';
-
+import client from '../api/client';
 
 function Join({ onCloseModal }) {
     const [formData, setFormData] = useState({
-        userId: '',
-        pw: '',
-        confirmPw: '',
-        name: '',
-        nickname:'',
-        birth: '',
-        phone: ''
+        email: '',         
+        password: '',
+        confirmPassword: '',
+        nickname: '',
     });
 
     const [formMessage, setFormMessage] = useState('');
@@ -24,28 +21,19 @@ function Join({ onCloseModal }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!formData.userId || !formData.pw || !formData.confirmPw || !formData.name ||!formData.nickname) {
-            setFormMessage('필수 정보를 모두 입력해주세요 (아이디, 비밀번호, 회원명, 닉네임).');
+        if (!formData.email || !formData.password || !formData.nickname) {
+            setFormMessage('필수 정보를 모두 입력해주세요 (아이디, 비밀번호, 닉네임).');
             return;
         }
-        if (formData.pw !== formData.confirmPw) {
+        if (formData.password !== formData.confirmPassword) {
             setFormMessage('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
             return;
         }
         try {
-            const response = await fetch('http://localhost:8080/memberRegist.do', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json', // JSON 형식으로 데이터 전송
-                },
-                body: JSON.stringify({ // formData에서 confirmPw를 제외하고 JSON 문자열로 변환
-                    userId: formData.userId,
-                    pw: formData.pw,
-                    name: formData.name,
-                    nickname:formData.nickname,
-                    birth: formData.birth,
-                    phone: formData.phone
-                }),
+            const response = await client.post('/users/signup', {
+                email: formData.email,
+                password: formData.password,
+                nickname: formData.nickname,
             });
             const message = await response.text(); 
             if (response.ok) {
@@ -76,11 +64,11 @@ function Join({ onCloseModal }) {
                            
                         <input
                             type="text"
-                            id="userId"
-                            name="userId"
-                            value={formData.userId}
+                            id="email"
+                            name="email"
+                            value={formData.email}
                             onChange={handleChange}
-                            placeholder='아이디'
+                            placeholder='이메일'
                             required
                         />
                 </div>            
@@ -89,9 +77,9 @@ function Join({ onCloseModal }) {
                     <label htmlFor="pw"></label>
                         <input
                             type="password"
-                            id="pw"
-                            name="pw"
-                            value={formData.pw}
+                            id="password"
+                            name="password"
+                            value={formData.password}
                             onChange={handleChange}
                             required
                             placeholder='비밀번호'
@@ -101,31 +89,19 @@ function Join({ onCloseModal }) {
                             <label htmlFor="confirmPw"></label>
                                 <input
                                     type="password"
-                                    id="confirmPw"
-                                    name="confirmPw"
-                                    value={formData.confirmPw}
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    value={formData.confirmPassword}
                                     onChange={handleChange}
                                     required
                                     placeholder='비밀번호확인'
                                 />
-                                {formData.pw && formData.confirmPw && formData.pw !== formData.confirmPw && (
+                                {formData.password && formData.confirmPassword && formData.password !== formData.confirmPassword && (
                                     <p className='password-mismatch-message'>비밀번호가 일치하지 않습니다.</p>
                                 )}
                 </div>
                         <div className="form-group">
                             <label htmlFor="name"></label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    placeholder='성명'
-                                />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="nickname"></label>
                                 <input
                                     type="text"
                                     id="nickname"
@@ -135,31 +111,7 @@ function Join({ onCloseModal }) {
                                     required
                                     placeholder='닉네임'
                                 />
-                        </div>        
-                        
-                        <div className="form-group">
-                            <label htmlFor="birth"></label>
-                                <input
-                                    type="text"
-                                    id="birth"
-                                    name="birth"
-                                    value={formData.birth}
-                                    onChange={handleChange}
-                                    placeholder="생년월일(YYYY-MM-DD)"
-                                    maxLength="10"
-                                />
-                        </div>
-                        <div className="form-group">
-                            <th><label htmlFor="phone"></label></th>
-                                <input
-                                    type="text"
-                                    id="phone"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    placeholder='휴대폰'
-                                />
-                        </div>
+                        </div>  
                         <div className='button-group'>
                             <button type="submit" className="submit-button">회원가입</button>
                         </div>

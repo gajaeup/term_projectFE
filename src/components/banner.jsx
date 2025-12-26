@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,9 +14,10 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import ContentCard from './ContentCard'; 
 
 export default function ImageSlider() { 
+    const navigate = useNavigate();
     const staticImages = [
-        { id: 1, poster_path: banner1, displayTitle: '배너1', type: 'custom' },
-        { id: 2, poster_path: banner2, displayTitle: '배너2', type: 'custom' },
+        { id: 1, poster_path: banner1, displayTitle: '배너1', type: 'custom', path: '/detail/tv/292531' },
+        { id: 2, poster_path: banner2, displayTitle: '배너2', type: 'custom', path: '/detail/tv/253193' },
 
     ];
 
@@ -49,11 +51,13 @@ export default function ImageSlider() {
                             <img
                                     src={item.poster_path} // staticImages의 poster_path는 이미 완전한 URL
                                     alt={item.displayTitle}
+                                    onClick={() => navigate(item.path)}
                                     style={{ 
                                         width: '100%', 
                                         height: '100%', 
                                         objectFit: 'cover',
-                                        borderRadius: '5px'
+                                        borderRadius: '5px',
+                                        cursor: 'pointer'
                                     }}
                                 />
                             </SwiperSlide>
