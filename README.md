@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# take2 (react)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 TMDB API를 활용한 영화/TV 시리즈 정보 제공, 리뷰 작성, 북마크 관리 기능을 제공하는 영화/드라마 커뮤니티 사이트입니다.
 
-## Available Scripts
 
-In the project directory, you can run:
+---
 
-### `npm start`
+서버 관련 자세한 내용은 백엔드 깃허브에 설명되어있습니다.
+### 백엔드 레포지토리 주소 : https://github.com/sjin02/term_projectBE
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 주요 기능(예정)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **홈 화면**
+    - 요즘 인기 작품
+    - 추천 작품
+    - 영화 공개 예정작
+    - 지금 뜨는 best 리뷰
+    - 현재 진행되고 있는 투표
+2. **작품 상세 화면**
+    - 기본 정보 / 캐릭터 목록 / 필모그래피 탭
+    - 에피소드 리스트 → 감상 리뷰 작성 버튼 포함
+3. **명장면 투표 화면**
+    - 작품별 명장면 썸네일 + 투표 버튼 UI
+    
+4. **내 정보 화면**
+    1. **내 감상 로그 화면**
+        - 타임라인 형식 감상 내역
+        - 언제 작품을 감상했는지에 대한 데이터 표시
+    2. **세계 확장(not world yes space)** 
+        - 감상 수치에 따른 변화 시각 피드백
+        - 성장 뱃지 / 칭호 컬렉션 (ex. 공포영화 마스터, 로코 헌터, 예비 협객 etc)
+    
+5. **작품 연말 정리**
+    - 1년 동안 본 작품 중 퍼스널 어워즈
+    - 1년 중 12월에만 서비스
+    - 지난 연말 정리 보기는 언제든 가능(but 수정 불가)
+    - 공개/비공개 설정 가능
